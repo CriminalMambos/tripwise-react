@@ -2,10 +2,13 @@
 
 E-commerce de paquetes turísticos, vuelos y experiencias de viaje desarrollado con React.
 
-## Componentes creados
+## Estructura y componentes
 - **Navbar**: Barra de navegación principal con el logo de la tienda, categorías de productos (Vuelos, Paquetes, Alojamientos, Excursiones) y el acceso al carrito.
 - **CartWidget**: Componente hijo dentro de la barra de navegación que muestra el ícono del carrito y un contador de productos.
-- **ItemListContainer**: Contenedor principal encargado de recibir y renderizar el mensaje de bienvenida mediante la prop `greeting`.
+- **ItemListContainer**: Componente contenedor que gestiona el estado con `useState` y obtiene los productos de forma asíncrona con `useEffect`.
+- **ItemList**: Componente encargado de mapear el listado de productos pasando la `key` correspondiente.
+- **Item**: Tarjeta individual que renderiza imagen, nombre, precio y stock disponible de cada producto.
+- **asyncMock.js**: Simulación de datos local mediante una `Promise` con retardo de 2 segundos.
 
 ## Tecnologías utilizadas
 - React
@@ -22,4 +25,3 @@ E-commerce de paquetes turísticos, vuelos y experiencias de viaje desarrollado 
    `npm install`
 4. Ejecutar el servidor de desarrollo:
    `npm run dev`
-   
