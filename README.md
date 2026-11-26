@@ -3,18 +3,20 @@
 E-commerce de paquetes turísticos, vuelos y experiencias de viaje desarrollado con React.
 
 ## Estructura y componentes
-- **Navbar**: Barra de navegación principal con el logo de la tienda, categorías de productos (Vuelos, Paquetes, Alojamientos, Excursiones) y el acceso al carrito.
+- **Layout**: Componente contenedor de rutas anidadas (`Outlet`) que mantiene visible el `Navbar` en toda la navegación.
+- **Navbar**: Barra de navegación principal con enlaces (`Link` y `NavLink`) al inicio y a las categorías (Vuelos, Paquetes, Alojamientos, Excursiones), además del carrito.
 - **CartWidget**: Componente hijo dentro de la barra de navegación que muestra el ícono del carrito y un contador de productos.
-- **ItemListContainer**: Componente contenedor que gestiona el estado con `useState` y obtiene el listado de productos con `useEffect`.
+- **ItemListContainer**: Contenedor que captura `categoryId` mediante `useParams` para mostrar todo el catálogo o filtrarlo por categoría.
 - **ItemList**: Componente encargado de mapear el listado de productos pasando la `key` correspondiente.
-- **Item**: Tarjeta individual que renderiza imagen, nombre, precio y stock disponible de cada producto.
-- **ItemDetailContainer**: Componente contenedor encargado de obtener un producto específico por ID mediante una promesa dinámica (`getProductById`).
+- **Item**: Tarjeta individual que renderiza imagen, nombre, precio, stock disponible y enlace hacia `/item/:itemId`.
+- **ItemDetailContainer**: Contenedor que captura `itemId` mediante `useParams` y obtiene el producto correspondiente con `getProductById`.
 - **ItemDetail**: Vista detallada del producto con imagen, nombre, categoría, descripción completa, precio, stock y selector de cantidad.
 - **ItemCount**: Contador reutilizable que controla la cantidad seleccionada respetando los límites de `0` y el `stock` disponible.
-- **asyncMock.js**: Simulación de datos local con `getProducts` y `getProductById` mediante promesas con retardo.
+- **asyncMock.js**: Simulación de datos local con `getProducts`, `getProductsByCategory` y `getProductById` mediante promesas con retardo.
 
 ## Tecnologías utilizadas
 - React
+- React Router DOM
 - Vite
 - JavaScript
 - CSS3

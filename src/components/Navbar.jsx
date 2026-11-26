@@ -1,21 +1,38 @@
+import { Link, NavLink } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar-brand">
-        <h2>TripWise</h2>
+        <Link to="/" className="brand-link">
+          <h2>TripWise</h2>
+        </Link>
       </div>
-
       <nav className="navbar-links">
         <ul>
-          <li><a href="#vuelos">Vuelos</a></li>
-          <li><a href="#paquetes">Paquetes</a></li>
-          <li><a href="#alojamientos">Alojamientos</a></li>
-          <li><a href="#excursiones">Excursiones</a></li>
+          <li>
+            <NavLink to="/category/vuelos" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              Vuelos
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/category/paquetes" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              Paquetes
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/category/alojamientos" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              Alojamientos
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/category/excursiones" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+              Excursiones
+            </NavLink>
+          </li>
         </ul>
       </nav>
-
       <CartWidget />
     </header>
   );

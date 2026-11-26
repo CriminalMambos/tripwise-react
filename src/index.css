@@ -256,3 +256,19 @@ body {
   font-weight: 600;
   font-size: 0.95rem;
 }
+
+.brand-link {
+  text-decoration: none;
+}
+
+.navbar-links a.active-link {
+  color: #38bdf8;
+  border-bottom: 2px solid #38bdf8;
+  padding-bottom: 0.2rem;
+}
+
+a.item-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}

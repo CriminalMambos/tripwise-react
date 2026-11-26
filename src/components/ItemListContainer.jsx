@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react';
-import { getProducts } from '../mock/asyncMock';
+import { useParams } from 'react-router-dom';
+import { getProducts, getProductsByCategory } from '../mock/asyncMock';
 import ItemList from './ItemList';
 
 function ItemListContainer({ greeting }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { categoryId } = useParams();
 
   useEffect(() => {
-    getProducts()
+    setLoading(true);
+    const asyncFunc = categoryId ? getProductsByCategory : getProducts;
+
+    asyncFunc(categoryId)
       .then((response) => {
         setProducts(response);
       })
@@ -17,11 +22,11 @@ function ItemListContainer({ greeting }) {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [categoryId]);
 
   return (
     <section className="item-list-container">
-      <h1>{greeting}</h1>
+      <h1>{categoryId ? `Categoría: ${categoryId.toUpperCase()}` : greeting}</h1>
       {loading ? (
         <p className="loading-text">Cargando destinos y experiencias...</p>
       ) : (

@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { getProductById } from '../mock/asyncMock';
 import ItemDetail from './ItemDetail';
 
-function ItemDetailContainer({ productId = '2' }) {
+function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { itemId } = useParams();
 
   useEffect(() => {
     setLoading(true);
     setError(null);
 
-    getProductById(productId)
+    getProductById(itemId)
       .then((response) => {
         setProduct(response);
       })
@@ -21,7 +23,7 @@ function ItemDetailContainer({ productId = '2' }) {
       .finally(() => {
         setLoading(false);
       });
-  }, [productId]);
+  }, [itemId]);
 
   return (
     <section className="item-detail-container">
