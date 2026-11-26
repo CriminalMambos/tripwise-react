@@ -1,9 +1,12 @@
+import Navbar from './components/Navbar';
+import ItemListContainer from './components/ItemListContainer';
+
 function App() {
   return (
-    <main>
-      <h1>TripWise</h1>
-      <p>Tu plataforma de viajes y experiencias.</p>
-    </main>
+    <>
+      <Navbar />
+      <ItemListContainer greeting="¡Bienvenido a TripWise! Descubrí tu próximo destino." />
+    </>
   );
 }
 
