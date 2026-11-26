@@ -272,3 +272,124 @@ a.item-btn {
   text-align: center;
   text-decoration: none;
 }
+
+a.cart-widget {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.detail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 240px;
+}
+
+.cart-container {
+  max-width: 900px;
+  margin: 2.5rem auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.cart-container h1 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.empty-cart {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  flex-wrap: wrap;
+}
+
+.cart-item-img {
+  width: 90px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cart-item-info {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cart-item-subtotal {
+  font-weight: 700;
+  color: #0284c7;
+}
+
+.remove-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #fecaca;
+}
+
+.cart-summary {
+  margin-top: 2rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cart-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.clear-btn {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background-color: #cbd5e1;
+}
