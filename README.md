@@ -5,10 +5,13 @@ E-commerce de paquetes turísticos, vuelos y experiencias de viaje desarrollado 
 ## Estructura y componentes
 - **Navbar**: Barra de navegación principal con el logo de la tienda, categorías de productos (Vuelos, Paquetes, Alojamientos, Excursiones) y el acceso al carrito.
 - **CartWidget**: Componente hijo dentro de la barra de navegación que muestra el ícono del carrito y un contador de productos.
-- **ItemListContainer**: Componente contenedor que gestiona el estado con `useState` y obtiene los productos de forma asíncrona con `useEffect`.
+- **ItemListContainer**: Componente contenedor que gestiona el estado con `useState` y obtiene el listado de productos con `useEffect`.
 - **ItemList**: Componente encargado de mapear el listado de productos pasando la `key` correspondiente.
 - **Item**: Tarjeta individual que renderiza imagen, nombre, precio y stock disponible de cada producto.
-- **asyncMock.js**: Simulación de datos local mediante una `Promise` con retardo de 2 segundos.
+- **ItemDetailContainer**: Componente contenedor encargado de obtener un producto específico por ID mediante una promesa dinámica (`getProductById`).
+- **ItemDetail**: Vista detallada del producto con imagen, nombre, categoría, descripción completa, precio, stock y selector de cantidad.
+- **ItemCount**: Contador reutilizable que controla la cantidad seleccionada respetando los límites de `0` y el `stock` disponible.
+- **asyncMock.js**: Simulación de datos local con `getProducts` y `getProductById` mediante promesas con retardo.
 
 ## Tecnologías utilizadas
 - React
